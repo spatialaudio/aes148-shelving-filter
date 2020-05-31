@@ -1,0 +1,86 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[numbers,square, sort&compress]{natbib}
+\usepackage{color}
+\usepackage{url}
+%##############################################################################
+% user stuff
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{trfsigns}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\tikzset{cross/.style={cross out, draw,
+         minimum size=2*(#1-\pgflinewidth),
+         inner sep=0pt, outer sep=0pt}}
+         \def\NewL{\\\noindent\hspace*{3.5mm}}  % hanging indent
+         \newcommand{\fscom}[2][red]{\textcolor{#1}{#2}}		%comment color
+         \newcommand{\eq}[1]{(\ref{#1})}			%cite own eq
+         \newcommand{\fig}[1]{Fig.~\ref{#1}}			%cite own fig
+
+\includecomment{plottikz}
+%\excludecomment{plottikz}
+
+\begin{document}
+\title{Shelving Filter Cascade with Adjustable Transition Slope and Bandwidth\\
+{\footnotesize Peer reviewed, open access paper for 148th
+Audio Eng. Soc. Conv., Virtual Vienna, 2020
+Paper 10339, \url{http://www.aes.org/e-lib/browse.cfm?elib=20756}}}
+\author{\IEEEauthorblockN{Frank Schultz, Nara Hahn, Sascha Spors}
+\IEEEauthorblockA{\textit{Institute of Communications Engineering,
+University of Rostock}\\
+Rostock, Germany\\
+\{frank.schultz, nara.hahn, sascha.spors\}@uni-rostock.de}
+}
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+\begin{IEEEkeywords}
+shelving filter,
+shelving filter cascade,
+shelving bandwidth,
+shelving slope,
+transition band,
+fractional-order slope
+\end{IEEEkeywords}
+\input{content.tex}
+\renewcommand\refname{}
+\section{References}
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\subsection*{Bibliography Comment}
+\noindent While discussing the work with Franz Zotter (we are as always
+deeply grateful),
+he mentioned related works
+\begin{itemize}
+\item Sophocles J. Orfanidis (2005):
+"High-Order Digital Parametric Equalizer Design"
+JAES Volume 53 Issue 11 pp. 1026-1046; November 2005
+\item Jonathan Abel and Julius O. Smith (2006):
+"Robust Design of Very High-Order Allpass Dispersion Filters". In:
+Proc. Conf. Digital Audio Effects (DAFx-06), Montreal, Canada
+\end{itemize}
+
+\noindent Orfanidis work is very similar to Holters/Zölzers, one could see it as a
+generalization for other pole/zero alignments such as Chebyshev type,
+whereas Abel/Smith used an IIR cascade to design allpass filters with
+adjustable phase.
+
+These works from the highly appreciated colleagues unfortunately were missed
+in the paper, but they are very enlightening. Also, with that in mind
+it is very likely that the proposed filter design already existed,
+but it was not yet written down nicely.
+
+\end{document}

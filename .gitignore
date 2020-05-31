@@ -1,0 +1,16 @@
+python/.idea
+python/.ipynb_checkpoints
+python/__pycache__
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
+*-eps-converted-to.pdf
+*.nav
+*.out
+*.snm
+*.toc
+*.cut

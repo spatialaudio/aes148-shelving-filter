@@ -1,0 +1,88 @@
+\definecolor{pyplotC0}{RGB}{31,119,180}
+\begin{figure}[t!]
+\centering
+%
+\begin{subfigure}{0.45\textwidth}
+\centering
+\input{tikz-cascade-biquads}
+\caption{Signal flow for shelving filter cascade with input $X(s)$, output $Y(s)$ and
+biquads $H_\mu(s)$ in series in the Laplace domain.}
+\label{fig:tikz-cascade-biquads}
+\end{subfigure}
+%
+\\\vspace{0.3cm}
+%
+\begin{subfigure}{0.45\textwidth}
+\centering
+\begin{plottikz}
+\begin{tikzpicture}[scale=1.5]
+\draw [-latex] (0,-0.1) -- (3,-0.1) node [right]  {$\lg \omega$};
+\draw [-latex] (-0.1,0.1) -- (-0.1,1.25) node [above]  {dB};
+\draw [gray, ultra thick] (0,0) -- (1,0);
+\draw [gray, ultra thick] (1,0) -- (2,1);
+\draw [gray, ultra thick] (2,1) -- (3,1);
+\draw[gray, fill=gray] (1.5,0.5) circle (1.5pt);
+\node at (-0.25,1) {$0$};
+\node at (-0.25,0.5) {$\frac{G_\mathrm{B}}{2}$};
+\node at (-0.25,0) {$G_\mathrm{B}$};
+\node at (1.5,-0.5) {$\omega_{\mathrm{c},\mu}$};
+\node at (1,-0.25) {};
+\node at (2,-0.25) {};
+%
+\draw [thin, black!30] (0,1) -- (1.75,1);
+\draw [thin, black!30] (0,0.5) -- (1.25,0.5);
+\draw [thin, black!30] (1.5,-0.3) -- (1.5,0.35);
+%
+\end{tikzpicture}
+\end{plottikz}
+\caption{Level response $20\lg |H_\mu(\omega)|$ of low-shelving
+biquad for $G_\mathrm{B}<0$ and mid-level cutoff frequency $\omega_{\mathrm{c},\mu}$.
+%The transition between the pass band and the shelving band can be somewhat controlled
+%by $Q$, which then yields under-/overdamped responses.
+}
+\label{fig:schematic_magres_2nd_ls}
+\end{subfigure}
+%
+\\\vspace{0.3cm}
+%
+\begin{subfigure}{0.45\textwidth}
+\centering
+\begin{plottikz}
+\begin{tikzpicture}[scale=1.5]
+\draw [<->] (1,1.2) -- node [above] {bandwidth $\beta=\log_2{\frac{\omega_\mathrm{u}}{\omega_\mathrm{l}}}$}  (2,1.2) ;
+\node [opacity=0] (first) {};
+\node [draw=white, right of=first,rotate=45,anchor=north,xshift=1.5cm, yshift=0.2cm] {slope $\chi$};
+%
+\draw [-latex] (0,-0.1) -- (3,-0.1) node [right]  {$\lg \omega$};
+\draw [-latex] (-0.1,0.1) -- (-0.1,1.25) node [above]  {dB};
+\draw [color=pyplotC0, ultra thick] (0,0) -- (1,0);
+\draw [color=pyplotC0, ultra thick] (1,0) -- (2,1);
+\draw [color=pyplotC0, ultra thick] (2,1) -- (3,1);
+\draw[color=pyplotC0, fill=pyplotC0] (1.5,0.5) circle (1.5pt);
+\node at (-0.25,1) {$0$};
+\node at (-0.25,0.5) {$\frac{G}{2}$};
+\node at (-0.25,0) {$G$};
+\node at (1.5,-0.5) {$\sqrt{\omega_\mathrm{l} \omega_\mathrm{u}}$};
+\node at (1,-0.25) {$\omega_\mathrm{l}$};
+\node at (2,-0.25) {$\omega_\mathrm{u}$};
+%
+\draw [thin, black!30] (0,1) -- (1.75,1);
+\draw [thin, black!30] (0,0.5) -- (1.15,0.5);
+\draw [thin, black!30] (1.5,-0.3) -- (1.5,0.35);
+\draw [thin, black!30] (2,0) -- (2,0.9);
+\draw [thin, black!30] (1,0.1) -- (1,0.9);
+%
+\end{tikzpicture}
+\end{plottikz}
+\caption{Level response $20\lg |H(\omega)|$ of shelving filter cascade
+for $G<0$ and lower/upper cutoff frequency $\omega_\mathrm{l/u}$. For a dedicated
+$\omega_\mathrm{u}$,
+additionally two of the three parameters $\chi$, $\beta$ and $G$ can be freely
+adjusted.}
+\label{fig:schematic_magres_2nd_arb}
+\end{subfigure}
+%
+\caption{Signal-flow graph (a) and schematic level responses of a single 2nd
+order shelving filter (b) and the proposed shelving filter cascade (c).}
+\label{fig:schematic_magres}
+\end{figure}

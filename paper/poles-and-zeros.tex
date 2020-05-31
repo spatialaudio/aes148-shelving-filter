@@ -1,0 +1,44 @@
+%\section*{Appendix II: Zeros and Poles}
+%
+The zeros and poles of a 2nd order low-shelving filter are
+\begin{align}
+s_{0} = \omega_\mathrm{c} \:g_\mathrm{B}^{\pm\frac{1}{4}} \: \e^{\im\alpha}\qquad
+s_{\infty} = \omega_\mathrm{c} \: g_\mathrm{B}^{\mp\frac{1}{4}} \: \e^{\im\alpha},
+\end{align}
+and the respective complex conjugates $s_{0}^{\ast}$ and $s_{\infty}^{\ast}$.
+The sign in the exponents is again determined
+by the shelving level $G_\mathrm{B}$.
+The polar angle $\alpha$ in the complex $s$-plane (Laplace domain)
+relates to
+\begin{align}
+Q = \frac{-1}{2\cos\alpha}.
+\end{align}
+For stable and causal filters,
+the poles must be in the left-half $s$-plane $\Re(s_{\infty}) < 0$,
+therefore $\frac{\pi}{2} < \alpha < \frac{3\pi}{2}$.
+The corresponding $Q$-factor is always positive
+and varies within $[\frac{1}{2}, \infty)$.
+This paper mainly considers Butterworth \cite{Ballou2008} $Q=\frac{1}{\sqrt{2}}$
+which leads to $\alpha=\frac{3}{4} \pi$
+as illustrated in Fig.~\ref{fig:pzmap}.
+If $Q=\frac{1}{2}$, i.e. $\alpha=\pi$,
+the poles and zeros lie on the real axis,
+thus double real poles $s_{0} = s_{0}^{\ast}$ and
+$s_{\infty} = s_{\infty}^{\ast}$ are obtained.
+%
+In this case the 2nd order frequency
+response is identical to that of the 1st order shelving filter, although
+obtained by different pole/zero-configurations.
+%
+Thus, it is sufficient to discuss the present filter design based on
+2nd order filters
+%
+\NewL In the case of high-shelving filters, the poles and zeros are exchanged. %,
+%\begin{align}
+%s_{0} &= \omega_{c,\mu} \: g_\mathrm{B}^{\mp\frac{1}{4}} \: e^{i\alpha}\\
+%s_{\infty} &= \omega_{c,\mu} \: g_\mathrm{B}^{\pm\frac{1}{4}} \: e^{i\alpha}.
+%\end{align}
+Notice that a high-shelving filter with a shelving gain $\pm g_\mathrm{B}$
+has the same poles and zeros as the low-shelving filter with $\mp g_\mathrm{B}$.
+The system functions only differ by a scaling factor of $\pm g_\mathrm{B}$
+due to the leading coefficients $b_{2}$ and $a_{2}$.
